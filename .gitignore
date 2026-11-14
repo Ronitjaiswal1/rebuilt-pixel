@@ -43,3 +43,5 @@ next-env.d.ts
 
 # QA output (screenshots, Lighthouse reports, test downloads)
 /qa/
+
+.vercel

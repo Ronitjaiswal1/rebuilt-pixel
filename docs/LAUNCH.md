@@ -6,7 +6,9 @@ Steps to take the site from the preview to your own domain. Allow about an hour,
 
 1. Push this repository to GitHub (private is fine).
 2. In Vercel: **Add New → Project → Import** the repository. Framework: Next.js (auto-detected). No build settings to change.
-3. If a temporary preview was created from the CLI, you can claim it from the link Vercel printed. Importing from Git is better, though, because every push then deploys automatically.
+3. Importing from Git is the recommended route: every push then deploys automatically.
+
+**Deploying from this Windows PC with the CLI** (`npx vercel deploy`) currently fails with `EPERM: operation not permitted, symlink`, because the CLI installs its build tools using symbolic links. Either turn on **Settings → System → For developers → Developer Mode** (or run the terminal as administrator) and retry, or use the GitHub import above, which needs neither.
 
 ## 2. Environment variables
 

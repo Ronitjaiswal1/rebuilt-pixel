@@ -43,5 +43,5 @@
 - [x] Price & feature verification (CHECKPOINT 3)
 
 ## Phase 6 — Launch
-- [~] Vercel preview
+- [!] Vercel preview: CLI deploy blocked on this PC (Windows symlink permission); deploy via GitHub import or enable Developer Mode (see LAUNCH.md)
 - [x] LAUNCH.md, README.md, TODO.md
