@@ -1,0 +1,113 @@
+/* Aangan Studio concept — scoped palette. Fixed light editorial look (it is a
+   client's brand, not ours), so it does not follow the site theme toggle. */
+.studio {
+  color-scheme: light;
+  --s-bg: #f5f0e8;
+  --s-paper: #fbf8f3;
+  --s-ink: #2a1614;
+  --s-muted: #6b5550;
+  --s-line: #e2d7c9;
+  --s-maroon: #6e1f23;
+  --s-maroon-ink: #fbf3ea;
+  --s-gold: #b0863a;
+  --s-gold-text: #7c5a1c;
+  background: var(--s-bg);
+  color: var(--s-ink);
+  font-family: var(--font-body);
+  min-height: 100dvh;
+}
+.studio-display {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.studio-kicker {
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.studio-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  min-height: 48px;
+  padding: 0.75em 1.5em;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition:
+    background-color 220ms,
+    color 220ms,
+    transform 220ms;
+}
+.studio-btn:active {
+  transform: scale(0.98);
+}
+.studio-btn-solid {
+  background: var(--s-maroon);
+  color: var(--s-maroon-ink);
+}
+.studio-btn-solid:hover {
+  background: var(--s-ink);
+}
+.studio-btn-ghost {
+  border: 1px solid currentColor;
+}
+.studio-btn-ghost:hover {
+  background: var(--s-ink);
+  color: var(--s-paper);
+  border-color: var(--s-ink);
+}
+.studio .field {
+  border-radius: 2px;
+  background: var(--s-paper);
+  border-color: #9b8a80;
+  color: var(--s-ink);
+}
+.studio .field:focus-visible {
+  border-color: var(--s-maroon);
+  box-shadow: 0 0 0 3px rgb(110 31 35 / 0.2);
+}
+.studio :focus-visible {
+  outline-color: var(--s-maroon);
+}
+.studio-masonry {
+  columns: 2;
+  column-gap: 8px;
+}
+@media (min-width: 560px) {
+  .studio-masonry {
+    column-gap: 12px;
+  }
+}
+@media (min-width: 1024px) {
+  .studio-masonry {
+    columns: 3;
+    column-gap: 16px;
+  }
+}
+.studio-masonry > * {
+  break-inside: avoid;
+  margin-bottom: 8px;
+}
+@media (min-width: 560px) {
+  .studio-masonry > * {
+    margin-bottom: 12px;
+  }
+}
+@media (min-width: 1024px) {
+  .studio-masonry > * {
+    margin-bottom: 16px;
+  }
+}
+.studio-lightbox::backdrop {
+  background: rgb(20 10 9 / 0.94);
+}
+.studio-lightbox[open] {
+  animation: rp-fade-up 260ms var(--e-out) both;
+}
