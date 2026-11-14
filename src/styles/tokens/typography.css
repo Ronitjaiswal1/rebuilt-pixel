@@ -1,0 +1,45 @@
+/*
+ * Typography tokens.
+ * Display: Fraunces (variable, optical size) — headlines and big numbers only.
+ * Body: Instrument Sans (variable) — everything else.
+ * Fraunces is self-hosted as a subset that includes ₹ (src/assets/fonts).
+ * Instrument Sans has no ₹ glyph, so a 2 KB Noto Sans subset covering only
+ * U+20B9 sits first in the body stack and is fetched only when ₹ appears.
+ * Devanagari: Noto Sans Devanagari is declared via next/font with preload:false.
+ */
+
+@font-face {
+  font-family: "RP Rupee";
+  src: url("./rupee.woff") format("woff");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+20B9;
+}
+
+:root {
+  --font-body: "RP Rupee", var(--font-instrument), var(--font-devanagari), ui-sans-serif,
+    system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-head: var(--font-fraunces), "RP Rupee", var(--font-devanagari), ui-serif, Georgia,
+    "Times New Roman", serif;
+
+  /* Fluid modular scale, 360px → 1440px viewport. */
+  --step--2: clamp(0.75rem, 0.73rem + 0.08vw, 0.8rem);
+  --step--1: clamp(0.84rem, 0.82rem + 0.1vw, 0.9rem);
+  --step-0: clamp(1rem, 0.96rem + 0.19vw, 1.125rem);
+  --step-1: clamp(1.15rem, 1.08rem + 0.33vw, 1.375rem);
+  --step-2: clamp(1.35rem, 1.22rem + 0.56vw, 1.75rem);
+  --step-3: clamp(1.6rem, 1.39rem + 0.93vw, 2.25rem);
+  --step-4: clamp(1.95rem, 1.6rem + 1.55vw, 3rem);
+  --step-5: clamp(2.35rem, 1.83rem + 2.3vw, 3.9rem);
+  --step-6: clamp(2.7rem, 1.95rem + 3.35vw, 5rem);
+  --step-7: clamp(2.95rem, 1.9rem + 4.7vw, 6.4rem);
+  --step-8: clamp(3.6rem, 1.6rem + 9vw, 10.5rem);
+
+  --leading-tight: 1.02;
+  --leading-snug: 1.15;
+  --leading-body: 1.6;
+  --tracking-display: -0.025em;
+  --tracking-caps: 0.12em;
+
+  --measure: 65ch; /* body copy line length */
+}

@@ -1,0 +1,20 @@
+/*
+ * Motion tokens. Only transform and opacity are ever animated.
+ * Content is visible at rest: nothing waits on scroll or an observer to appear.
+ */
+:root {
+  --e-out: cubic-bezier(0.22, 1, 0.36, 1); /* expo-ish, for entrances */
+  --e-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --e-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* small overshoot, hovers only */
+  --dur-1: 120ms; /* press, colour */
+  --dur-2: 220ms; /* hover */
+  --dur-3: 420ms; /* reveals, menus */
+  --dur-4: 800ms; /* headline entrance */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-3: 1ms;
+    --dur-4: 1ms;
+  }
+}

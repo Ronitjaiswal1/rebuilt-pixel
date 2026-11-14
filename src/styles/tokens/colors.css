@@ -1,0 +1,121 @@
+/*
+ * Colour tokens — Rebuilt Pixel
+ * No logo was supplied, so this follows the brief's fallback direction:
+ * ink-navy + warm paper + one marigold accent. See docs/DESIGN_SYSTEM.md.
+ *
+ * Contrast is verified by `npm run check:contrast` (scripts/contrast-check.mjs),
+ * which parses the LIGHT and DARK blocks below. Keep the marker comments.
+ */
+
+/* @theme-light:start */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --c-bg: #f6f3ec; /* warm paper */
+  --c-surface: #ffffff; /* cards, raised */
+  --c-sunken: #ede8dd; /* recessed bands, table stripes */
+  --c-ink: #0e1830; /* text, primary */
+  --c-muted: #4b5568; /* secondary text */
+  --c-line: #d9d2c3; /* hairlines, borders (decorative) */
+  --c-line-strong: #8a8474; /* form borders (3:1 on surface) */
+  --c-accent: #f2a516; /* marigold — fills, highlights, never small text on paper */
+  --c-on-accent: #0e1830; /* text on marigold */
+  --c-accent-text: #8a5300; /* marigold, text-safe on paper */
+  --c-accent-2: #1f3a5f; /* slate-indigo — links, focus */
+  --c-success: #1d7a46;
+  --c-error: #b42318;
+  --c-whatsapp: #0b7d3e; /* WhatsApp green, darkened for white text AA */
+  --c-on-whatsapp: #ffffff;
+  --c-focus: #1f3a5f;
+  --c-overlay: rgb(14 24 48 / 0.55);
+  --c-glass: rgb(246 243 236 / 0.72);
+}
+/* @theme-light:end */
+
+/* @theme-dark:start */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --c-bg: #0b1220; /* ink-navy */
+  --c-surface: #131c2e;
+  --c-sunken: #0f1727;
+  --c-ink: #f3eee4; /* warm white */
+  --c-muted: #a9b2c3;
+  --c-line: #24304a;
+  --c-line-strong: #6b7891;
+  --c-accent: #ffb833;
+  --c-on-accent: #0b1220;
+  --c-accent-text: #ffbf47;
+  --c-accent-2: #8fb0dd;
+  --c-success: #4cc38a;
+  --c-error: #ff8a7a;
+  --c-whatsapp: #25d366;
+  --c-on-whatsapp: #07210f;
+  --c-focus: #ffb833;
+  --c-overlay: rgb(3 6 12 / 0.7);
+  --c-glass: rgb(11 18 32 / 0.72);
+}
+/* @theme-dark:end */
+
+/* Follow the OS when the visitor has not chosen a theme. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --c-bg: #0b1220;
+    --c-surface: #131c2e;
+    --c-sunken: #0f1727;
+    --c-ink: #f3eee4;
+    --c-muted: #a9b2c3;
+    --c-line: #24304a;
+    --c-line-strong: #6b7891;
+    --c-accent: #ffb833;
+    --c-on-accent: #0b1220;
+    --c-accent-text: #ffbf47;
+    --c-accent-2: #8fb0dd;
+    --c-success: #4cc38a;
+    --c-error: #ff8a7a;
+    --c-whatsapp: #25d366;
+    --c-on-whatsapp: #07210f;
+    --c-focus: #ffb833;
+    --c-overlay: rgb(3 6 12 / 0.7);
+    --c-glass: rgb(11 18 32 / 0.72);
+  }
+}
+
+/*
+ * Ink band: a deliberately dark section inside a light page (final CTA,
+ * featured plan). In dark mode it sinks one step deeper than the page.
+ */
+/* @band-ink:start */
+.band-ink {
+  color-scheme: dark;
+  --c-bg: #0e1830;
+  --c-surface: #17233f;
+  --c-sunken: #0b1427;
+  --c-ink: #f6f3ec;
+  --c-muted: #b4bccb;
+  --c-line: #2a3756;
+  --c-line-strong: #7180a0;
+  --c-accent: #f2a516;
+  --c-on-accent: #0e1830;
+  --c-accent-text: #ffbf47;
+  --c-accent-2: #9db9e3;
+  --c-success: #4cc38a;
+  --c-error: #ff8a7a;
+  --c-whatsapp: #25d366;
+  --c-on-whatsapp: #07210f;
+  --c-focus: #ffb833;
+  background-color: var(--c-bg);
+  color: var(--c-ink);
+}
+/* @band-ink:end */
+
+[data-theme="dark"] .band-ink {
+  --c-bg: #060b16;
+  --c-surface: #101a2d;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .band-ink {
+    --c-bg: #060b16;
+    --c-surface: #101a2d;
+  }
+}

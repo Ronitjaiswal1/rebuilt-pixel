@@ -1,0 +1,52 @@
+/*
+ * Space, layout and shape tokens. 8px base: every spacing step is a multiple
+ * of 8 (with 4px allowed for hairline adjustments inside components).
+ */
+:root {
+  --space-1: 0.5rem; /* 8 */
+  --space-2: 1rem; /* 16 */
+  --space-3: 1.5rem; /* 24 */
+  --space-4: 2rem; /* 32 */
+  --space-5: 2.5rem; /* 40 */
+  --space-6: 3rem; /* 48 */
+  --space-8: 4rem; /* 64 */
+  --space-10: 5rem; /* 80 */
+  --space-12: 6rem; /* 96 */
+  --space-16: 8rem; /* 128 */
+
+  /* Vertical rhythm between page sections. */
+  --section-y: clamp(4.5rem, 3rem + 6vw, 9rem);
+  --section-y-tight: clamp(3rem, 2.25rem + 3vw, 5.5rem);
+
+  /* Layout */
+  --container: 75rem; /* 1200px content width */
+  --container-wide: 90rem; /* 1440px for full-bleed media rows */
+  --gutter: clamp(1rem, 0.4rem + 3vw, 2.5rem); /* ≥16px on mobile */
+  --header-h: 4.5rem;
+
+  /* Shape — one radius scale, used by role */
+  --r-xs: 4px; /* tags, table cells */
+  --r-sm: 8px; /* inputs, small buttons */
+  --r-md: 14px; /* cards */
+  --r-lg: 24px; /* feature panels, media */
+  --r-xl: 36px; /* device frames */
+  --r-pill: 999px; /* buttons, chips */
+
+  /* Shadows — warm-tinted; used only on raised, interactive surfaces */
+  --sh-sm: 0 1px 2px rgb(14 24 48 / 0.06), 0 1px 1px rgb(14 24 48 / 0.04);
+  --sh-md: 0 8px 24px -8px rgb(14 24 48 / 0.16), 0 2px 6px rgb(14 24 48 / 0.06);
+  --sh-lg: 0 32px 64px -24px rgb(14 24 48 / 0.32), 0 8px 20px -8px rgb(14 24 48 / 0.14);
+}
+
+[data-theme="dark"] {
+  --sh-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --sh-md: 0 8px 24px -8px rgb(0 0 0 / 0.6);
+  --sh-lg: 0 32px 64px -24px rgb(0 0 0 / 0.75);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --sh-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+    --sh-md: 0 8px 24px -8px rgb(0 0 0 / 0.6);
+    --sh-lg: 0 32px 64px -24px rgb(0 0 0 / 0.75);
+  }
+}

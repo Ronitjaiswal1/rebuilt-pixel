@@ -1,29 +1,50 @@
 {
   "name": "rebuilt-pixel",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "check": "npm run lint && npm run typecheck && npm run check:contrast",
+    "check:contrast": "node scripts/contrast-check.mjs",
+    "qa:screens": "node scripts/qa-screenshots.mjs",
+    "qa:e2e": "node scripts/qa-functional.mjs",
+    "qa:lighthouse": "node scripts/lighthouse.mjs",
+    "capture:concept": "node scripts/capture-concept.mjs",
+    "make:icons": "node scripts/make-icons.mjs"
   },
   "dependencies": {
-    "lucide-react": "^0.556.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-router-dom": "^7.10.1"
+    "@pdf-lib/fontkit": "^1.1.1",
+    "@vercel/analytics": "^2.0.1",
+    "gsap": "^3.15.1",
+    "lenis": "^1.3.27",
+    "next": "16.4.6",
+    "pdf-lib": "^1.17.1",
+    "qrcode": "^1.5.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
-    "@types/react": "^19.2.5",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.1",
-    "eslint": "^9.39.1",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.4.24",
-    "globals": "^16.5.0",
-    "vite": "^7.2.4"
+    "@axe-core/playwright": "^4.14.0",
+    "@tailwindcss/turbopack": "4.3.3",
+    "@types/node": "^20",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "chrome-launcher": "^1.2.3",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "lighthouse": "^12.8.2",
+    "playwright": "^1.65.0",
+    "prettier": "^3.10.1",
+    "tailwindcss": "4.3.3",
+    "typescript": "^5",
+    "wawoff2": "^2.0.1"
+  },
+  "engines": {
+    "node": ">=20.9.0"
   }
 }
