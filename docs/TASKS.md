@@ -1,6 +1,6 @@
 # Task list
 
-Updated as work progresses. `[x]` done · `[~]` in progress · `[ ]` to do.
+`[x]` done · `[~]` in progress · `[ ]` to do · `[!]` blocked on you (see TODO.md)
 
 ## Phase 1 — Research
 - [x] Inspect brand assets (none found; fallback palette)
@@ -9,39 +9,39 @@ Updated as work progresses. `[x]` done · `[~]` in progress · `[ ]` to do.
 - [x] CHECKPOINT 1 summary
 
 ## Phase 2 — Design system
-- [ ] Scaffold Next.js + TS + Tailwind; remove Vite prototype (kept in git history)
-- [ ] Tokens in `/src/styles/tokens`, light + dark, wired into Tailwind
-- [ ] Contrast-check script + results
-- [ ] Fonts via next/font (Fraunces, Instrument Sans, Noto Sans Devanagari fallback)
-- [ ] Motion layer (GSAP + ScrollTrigger + Lenis), reduced-motion safe
-- [ ] Components (header, hero, buttons, pricing, table, cards, FAQ, form, footer, WA float, theme toggle, toast)
-- [ ] `/styleguide` + screenshots 390/768/1440 — CHECKPOINT 2
-- [ ] `/docs/DESIGN_SYSTEM.md`
+- [x] Next.js 16 + TS + Tailwind v4 scaffold (Vite prototype kept in git history, commit 0ccd0b2)
+- [x] Tokens in `/src/styles/tokens`, light + dark + ink band, wired into Tailwind
+- [x] Contrast-check script, all pairs pass AA (`docs/CONTRAST.md`)
+- [x] Fonts: Fraunces (self-hosted subset), Instrument Sans, ₹ subset, Devanagari fallback
+- [x] Motion layer: IO reveals everywhere; GSAP + ScrollTrigger + Lenis on desktop only; reduced-motion safe
+- [x] Components
+- [x] `/styleguide` + screenshots 390/768/1440 (CHECKPOINT 2)
+- [x] `/docs/DESIGN_SYSTEM.md`
 
 ## Phase 3 — IA and copy
-- [ ] `/src/content` (site, plans, services, industries, FAQ, process, pages)
-- [ ] Copy for all pages; honesty placeholders
+- [x] `/src/content` for site, plans, services, industries, FAQ, process, pages, pitch, demo, credits
+- [x] Copy for all pages; honesty placeholders
+- [!] Copy approval, policies, contact details
 
 ## Phase 4 — Build
-- [ ] Home, Services, Pricing, Work, Industries, /for/photographers, Process, About, Contact
-- [ ] /pitch (keys, swipe, progress, ?client=, Prepared-for field)
-- [ ] /demo/studio concept (gallery, viewer, packages, form, device frame toggle)
-- [ ] Service worker (offline pitch + demo)
-- [ ] QR codes, PDF summary
-- [ ] Enquiry API (Resend, honeypot, rate limit, lead log)
-- [ ] SEO: metadata, OG images, sitemap, robots, JSON-LD, icons, manifest
-- [ ] Analytics + GA/Meta slots (+ consent only if needed)
-- [ ] Privacy, Terms, 404
+- [x] Home, Services, Pricing, Work, Industries, /for/photographers, Process, About, Contact
+- [x] /pitch (keys, swipe, progress, ?client=, Prepared-for field, QR, PDF)
+- [x] /demo/studio concept (gallery, viewer, packages, form, phone/laptop frames)
+- [x] Service worker (offline pitch + demo)
+- [x] QR codes, PDF summary
+- [x] Enquiry API (Resend, webhook, honeypot, rate limit, lead log)
+- [x] SEO: metadata, OG images, sitemap, robots, JSON-LD, icons, manifest
+- [x] Analytics (Vercel) + Plausible/GA/Meta slots with consent
+- [x] Privacy, Terms (draft for legal review), Credits, 404
 
 ## Phase 5 — QA
-- [ ] build / lint / typecheck clean
-- [ ] Lighthouse mobile + desktop
-- [ ] Playwright screenshots all pages × 390/768/1440 × light/dark
-- [ ] Form E2E, WhatsApp links, menu, keyboard, reduced motion, pitch, offline, PDF
-- [ ] axe
-- [ ] Links/images/console
-- [ ] Price & feature verification — CHECKPOINT 3
+- [x] build / lint / typecheck clean
+- [x] Lighthouse mobile + desktop
+- [x] Playwright screenshots, all pages × 390/768/1440 × light/dark (102), no overflow, no console errors
+- [x] Functional E2E: form → webhook, WhatsApp links, menu, keyboard, reduced motion, pitch, offline, PDF, links
+- [x] Accessibility (Lighthouse/axe 100 on audited pages)
+- [x] Price & feature verification (CHECKPOINT 3)
 
 ## Phase 6 — Launch
-- [ ] Vercel preview
-- [ ] LAUNCH.md, README.md, TODO.md
+- [~] Vercel preview
+- [x] LAUNCH.md, README.md, TODO.md
